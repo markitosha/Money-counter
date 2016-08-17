@@ -1,0 +1,23 @@
+body {
+    background-color: #f2fffc;
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+}
+
+.head {
+    text-align: center;
+    font-family: Zapfino, Noteworthy, Arial, sans-serif;
+}
+
+.container {
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.balance {
+    text-align: right;
+    padding: 0 5px 10px 0;
+    color: rgba(125, 125, 125, 0.82);
+    font-weight: bold;
+}

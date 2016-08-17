@@ -1,0 +1,44 @@
+.list {
+    margin-top: 10px;
+    /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);*/
+    background: white;
+    font-size: 14px;
+}
+
+.list_item {
+    padding: 5px;
+    min-height: 14px;
+    border-bottom: 1px solid rgba(175, 175, 175, 0.82);
+    font-size: 14px;
+    display: block;
+}
+
+.list_green {
+    background: rgba(97, 223, 97, 0.32);
+}
+
+.list_red {
+    background: rgba(223, 0, 40, 0.2);
+}
+
+.list_item_name {
+    width: 60%;
+    border: none;
+    border-right: 1px solid rgba(175, 175, 175, 0.82);
+    display: inline-block;
+}
+
+.list_item_sum {
+    width: 30%;
+    padding: 5px 0;
+    display: inline-block;
+    text-align: right;
+    border: none;
+}
+
+.list_empty{
+    color: #d1d1d1;
+    background-color: #f2fffc;
+    font-size: 14px;
+    text-align: center;
+}

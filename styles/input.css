@@ -1,0 +1,34 @@
+.input {
+    padding: 5px 0 5px 10px;
+    background: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.input_some {
+    font-size: 14px;
+    border: none;
+    padding: 5px 0;
+    margin: 0;
+    border-right: #d1d1d1 1px solid;
+}
+
+.input_some:focus {
+    outline: none;
+}
+
+.input_name {
+    width: 50%;
+    border-left: #d1d1d1 1px solid;
+    padding-left: 5px;
+}
+
+.input_sum {
+    border: none;
+    width: 21%;
+}
+
+.input_category {
+    width: 25%;
+    background: white;
+    border: none;
+}
