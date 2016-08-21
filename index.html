@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Money counter</title>
-        <link rel="stylesheet" type="text/css" href="styles/index.css">
-        <link rel="stylesheet" type="text/css" href="styles/input.css">
-        <link rel="stylesheet" type="text/css" href="styles/list.css">
-        <link rel="stylesheet" type="text/css" href="styles/menu.css">
-        <script src="app.js"></script>
-    </head>
-    <body>
-    <div class="head">
-        <h1>Money counter</h1>
+<head>
+    <meta charset="UTF-8">
+    <title>Money counter</title>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/input.css">
+    <link rel="stylesheet" type="text/css" href="styles/list.css">
+    <link rel="stylesheet" type="text/css" href="styles/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="app" ng-controller="main">
+<div class="head">
+    <h1>Money counter</h1>
+</div>
+<div class="container">
+    <div class="balance" ng-model="balance">
+        Текущий баланс: {{balance}}
     </div>
-    <div class="container">
-        <div class="balance">
-            Текущий баланс: 0
-        </div>
-        <div class="input">
-            <select class="input_some input_category" id="category" required>
-                <optgroup label="Категория">Категория
-                    <option value="income">Доходы</option>
-                    <option value="outcome">Расходы</option>
-                </optgroup>
-            </select>
-            <input class="input_some input_name" placeholder="Название" autofocus>
-            <input class="input_some input_sum" placeholder="Сумма">
-        </div>
-        <div class="menu">
-            <div class="menu_item menu_item_all menu_item_selected">все</div>
-            <div class="menu_item menu_item_income">доходы</div>
-            <div class="menu_item menu_item_outcome">расходы</div>
-        </div>
-        <div class="list">
-        <!--    <div class="list_item list_green">
-                <span class="list_item list_item_name">Hello</span>
-                <span class="list_item list_item_sum">091</span>
+    <div class="input">
+        <select class="input_some input_category" id="category"
+                ng-model="input.category">
+            <option value="income" ng-selected="input.category == 'income'">Доходы</option>
+            <option value="outcome" ng-selected="input.category == 'outcome'">Расходы</option>
+        </select>
+        <input class="input_some input_name" placeholder="Название" autofocus
+               ng-model="input.name" ng-keypress="addListItem($event)">
+        <input class="input_some input_sum" placeholder="Сумма"
+               ng-model="input.sum" ng-keypress="addListItem($event)">
+    </div>
+    <div class="menu">
+        <div class="menu_item"
+             ng-repeat="item in menu"
+             ng-bind="item.name"
+             ng-class="{menu_item_selected: item === selectedMenuItem}"
+             ng-click="selectMenuItem(item)"></div>
+    </div>
+    <div class="list">
+        <div ng-if="getFilteredListItem().length === 0" class="list_empty">
+            <div ng-if="!selectedMenuItem.category">
+                Здесь появится информация, когда Вы начнете пользоваться приложением.
             </div>
-            <div class="list_item list_red">
-                <span class="list_item list_item_name"></span>
-                <span class="list_item list_item_sum"></span>
-            </div>-->
+            <div ng-if="selectedMenuItem.category === 'income'">
+                Нет информации о доходах.
+            </div>
+            <div ng-if="selectedMenuItem.category === 'outcome'">
+                Нет информации о расходах.
+            </div>
+        </div>
+        <div class="list_item" ng-class="{
+            list_red: item.category === 'outcome',
+            list_green: item.category === 'income'
+        }" ng-repeat="item in getFilteredListItem()">
+            <span class="list_item list_item_name" ng-bind="item.name"></span>
+            <span class="list_item list_item_sum" ng-bind="item.sum"></span>
         </div>
     </div>
-    </body>
+</div>
+</body>
 </html>
