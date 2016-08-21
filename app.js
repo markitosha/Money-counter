@@ -3,7 +3,10 @@
  */
 angular.module('app', [])
     .controller('main', function($scope){
-        $scope.list = [];
+        $scope.list = [
+            createListItem('Помидоры','100', 'outcome'),
+            createListItem('Зарплата', '200', 'income')
+        ];
 
         $scope.input = {
             name: '',
@@ -17,6 +20,15 @@ angular.module('app', [])
             {name: 'расходы', category: 'outcome'}];
 
         $scope.selectedMenuItem = $scope.menu[0];
+
+        $scope.deleteListItem = function (index) {
+            if($scope.list[index].category === 'income'){
+                $scope.balance -= Number($scope.list[index].sum);
+            }else{
+                $scope.balance += Number($scope.list[index].sum);
+            }
+            $scope.list.splice(index, 1);
+        };
 
         $scope.selectMenuItem = function (item) {
             $scope.selectedMenuItem = item;

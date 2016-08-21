@@ -54,6 +54,7 @@
         }" ng-repeat="item in getFilteredListItem()">
             <span class="list_item list_item_name" ng-bind="item.name"></span>
             <span class="list_item list_item_sum" ng-bind="item.sum"></span>
+            <div class="list_item list_item_delete" ng-click="deleteListItem($index)">✕</div>
         </div>
     </div>
 </div>

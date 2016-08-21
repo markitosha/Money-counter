@@ -22,23 +22,41 @@
 }
 
 .list_item_name {
-    width: 60%;
+    width: 65%;
     border: none;
     border-right: 1px solid rgba(175, 175, 175, 0.82);
     display: inline-block;
 }
 
 .list_item_sum {
-    width: 30%;
-    padding: 5px 0;
+    width: 22%;
+    padding: 5px;
     display: inline-block;
     text-align: right;
     border: none;
 }
 
-.list_empty{
+.list_empty {
     color: #d1d1d1;
     background-color: #f2fffc;
     font-size: 14px;
     text-align: center;
+}
+
+.list_item_delete {
+    /*width:2%;*/
+    /*display: inline-block;*/
+    /*text-align: right;*/
+    font-size: 16px;
+    border: none;
+    /*border-left: 1px solid rgba(175, 175, 175, 0.82);*/
+    padding: 5px;
+    float: right;
+    color: #333333;
+    visibility: hidden;
+    background-color: inherit;
+}
+
+.list_item:hover .list_item_delete {
+    visibility: visible;
 }
