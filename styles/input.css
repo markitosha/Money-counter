@@ -32,3 +32,16 @@
     background: white;
     border: none;
 }
+
+.input_button {
+    padding: 10px 25px;
+    background-color: rgba(119, 113, 255, 1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin-left: 450px;
+    margin-top: -36px;
+}
+
+.input_button:active {
+    background-color: #6767cd;
+}

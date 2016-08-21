@@ -4,8 +4,8 @@
 angular.module('app', [])
     .controller('main', function($scope){
         $scope.list = [
-            createListItem('Помидоры','100', 'outcome'),
-            createListItem('Зарплата', '200', 'income')
+            // createListItem('Помидоры','100', 'outcome'),
+            // createListItem('Зарплата', '200', 'income')
         ];
 
         $scope.input = {
@@ -44,7 +44,7 @@ angular.module('app', [])
 
         $scope.addListItem = function ($event) {
 
-            if($event.keyCode !== 13) {
+            if($event.keyCode !== 13 && $event.type !== 'click') {
                 return;
             }
 

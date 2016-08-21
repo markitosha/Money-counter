@@ -29,6 +29,7 @@
         <input class="input_some input_sum" placeholder="Сумма"
                ng-model="input.sum" ng-keypress="addListItem($event)">
     </div>
+    <button class="input_some input_button" ng-click="addListItem($event)">Добавить</button>
     <div class="menu">
         <div class="menu_item"
              ng-repeat="item in menu"
