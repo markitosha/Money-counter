@@ -28,6 +28,9 @@
                ng-model="input.name" ng-keypress="addListItem($event)">
         <input class="input_some input_sum" placeholder="Сумма"
                ng-model="input.sum" ng-keypress="addListItem($event)">
+        <div class="input_error error_name" ng-if="emptyName">Введите название</div>
+        <div class="input_error error_sum" ng-if="emptySum">Введите сумму</div>
+        <div class="input_error wrong_sum" ng-if="wrongSum">Некорректная сумма</div>
     </div>
     <button class="input_some input_button" ng-click="addListItem($event)">Добавить</button>
     <div class="menu">

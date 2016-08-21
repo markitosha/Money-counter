@@ -14,6 +14,10 @@ angular.module('app', [])
             category: 'income'
         };
 
+        $scope.emptyName = false;
+        $scope.emptySum = false;
+        $scope.wrongSum = false;
+
         $scope.balance = 0;
 
         $scope.menu = [{name: 'все'}, {name: 'доходы', category: 'income'},
@@ -52,8 +56,20 @@ angular.module('app', [])
             var sum = $scope.input.sum;
             var category = $scope.input.category;
 
+            $scope.emptyName = false;
+            $scope.emptySum = false;
+            $scope.wrongSum = false;
+
             if(isEmptyString(name) || isEmptyString(sum)
                 || isEmptyString(category) || !Number(sum)){
+                if(isEmptyString(name)){
+                    $scope.emptyName = true;
+                }
+                if(isEmptyString(sum)){
+                    $scope.emptySum = true;
+                }else if(!Number(sum)){
+                    $scope.wrongSum = true;
+                }
                 return;
             }
 
