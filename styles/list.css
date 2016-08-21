@@ -22,14 +22,14 @@
 }
 
 .list_item_name {
-    width: 65%;
+    width: 71%;
     border: none;
     border-right: 1px solid rgba(175, 175, 175, 0.82);
     display: inline-block;
 }
 
 .list_item_sum {
-    width: 22%;
+    width: 17%;
     padding: 5px;
     display: inline-block;
     text-align: right;
@@ -54,5 +54,27 @@
 }
 
 .list_item:hover .list_item_delete {
+    visibility: visible;
+}
+
+.edit_item {
+    font-size: 16px;
+    border: none;
+    padding: 0;
+
+    background-color: transparent;
+}
+
+.item_time {
+    visibility: hidden;
+    position: absolute;
+    font-size: 12px;
+    width: 100px;
+    margin-left: -110px;
+    text-align: right;
+    color: #d1d1d1;
+}
+
+.list_item:hover .item_time {
     visibility: visible;
 }

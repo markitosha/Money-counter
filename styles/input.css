@@ -17,14 +17,14 @@
 }
 
 .input_name {
-    width: 50%;
+    width: 44%;
     border-left: #d1d1d1 1px solid;
     padding-left: 5px;
 }
 
 .input_sum {
     border: none;
-    width: 21%;
+    width: 27%;
 }
 
 .input_category {

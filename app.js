@@ -87,10 +87,13 @@ angular.module('app', [])
         };
 
         function createListItem(name, sum, category) {
+            date = new Date();
+            date.toTimeString();
             return {
                 name: name,
                 sum: sum,
-                category: category
+                category: category,
+                date: new Date(),
             }
         }
 

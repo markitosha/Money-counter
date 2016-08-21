@@ -16,7 +16,7 @@
 </div>
 <div class="container">
     <div class="balance" ng-model="balance">
-        Текущий баланс: {{balance}}
+        Текущий баланс: {{balance | number:2}}
     </div>
     <div class="input">
         <select class="input_some input_category" id="category"
@@ -56,8 +56,13 @@
             list_red: item.category === 'outcome',
             list_green: item.category === 'income'
         }" ng-repeat="item in getFilteredListItem()">
+            <div class="item_time" ng-model="item.time">
+                {{item.date.toTimeString() | limitTo:8}}
+                <br>
+                {{item.date | date:'dd.mm.yyyy'}}
+            </div>
             <span class="list_item list_item_name" ng-bind="item.name"></span>
-            <span class="list_item list_item_sum" ng-bind="item.sum"></span>
+            <span class="list_item list_item_sum" ng-model="item.sum">{{item.sum | number:2}}</span>
             <div class="list_item list_item_delete" ng-click="deleteListItem($index)">✕</div>
         </div>
     </div>
