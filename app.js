@@ -62,8 +62,10 @@ angular.module('app', [])
         //Удаление элемента списка с изменением баланса
         $scope.deleteListItem = function (index) {
             if($scope.list[index].category === 'income'){
+                $scope.statistic.income -= Number($scope.list[index].sum);
                 $scope.balance -= Number($scope.list[index].sum);
             }else{
+                $scope.statistic.outcome -= Number($scope.list[index].sum);
                 $scope.balance += Number($scope.list[index].sum);
             }
             $scope.list.splice(index, 1);
@@ -106,8 +108,10 @@ angular.module('app', [])
             }
 
             if(category === 'income'){
+                $scope.statistic.income += Number(sum);
                 $scope.balance += Number(sum);
             }else{
+                $scope.statistic.outcome += Number(sum);
                 $scope.balance -= Number(sum);
             }
 
@@ -137,6 +141,13 @@ angular.module('app', [])
             }
 
             return $scope.list.filter(i => i.category === $scope.selectedMenuItem.category);
+        };
+
+        /*СТАТИСТИКА*/
+
+        $scope.statistic = {
+            income: 0,
+            outcome: 0
         };
 
         //Пустая ли строка
