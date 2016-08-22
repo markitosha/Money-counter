@@ -51,6 +51,7 @@
     color: #333333;
     visibility: hidden;
     background-color: inherit;
+    cursor: pointer;
 }
 
 .list_item:hover .list_item_delete {
@@ -77,4 +78,16 @@
 
 .list_item:hover .item_time {
     visibility: visible;
+}
+
+.month_info {
+    background-color: #f2fffc;
+    width: 430px;
+    padding: 5px;
+    color: #d1d1d1;
+    font-size: 12px;
+    position: relative;
+    bottom:5px;
+    right: 5px;
+    text-align: center;
 }
